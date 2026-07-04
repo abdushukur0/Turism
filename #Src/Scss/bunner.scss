@@ -1,0 +1,290 @@
+.main {
+
+   &__container {
+      width: 100%;
+   }
+
+   &__bunner {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+   }
+}
+
+._fake-date {}
+
+.bunner {
+
+   input,
+   select,
+   option {
+      cursor: pointer;
+   }
+
+   .find-program-btn {
+      @media (min-width: $mobileWidth) {
+         display: none;
+
+      }
+   }
+
+   &__img {
+      top: 0;
+      left: 0;
+      z-index: -1;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background: #333;
+      background: url('../img/Banner/1.jpg') center / cover no-repeat;
+   }
+
+   &__title {
+      font-family: 'NEXT ART';
+      font-weight: 700;
+      font-size: 50px;
+      color: $white;
+      font-size: clamp(20px, 20px + (50 - 20) * ((100vw - 390px) / (1200 - 390)), 50px);
+      margin-bottom: 41px;
+      align-self: self-start;
+      line-height: 120%;
+      letter-spacing: 2%;
+
+      @media (max-width: $padWidth) {
+         margin-bottom: 36px;
+
+         br {
+            display: none;
+         }
+      }
+   }
+
+   &__form-container {
+      width: 100%;
+      min-height: 161px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      margin-bottom: 82px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      padding: 0 42px;
+      position: relative;
+
+      @media (max-width: $padWidth) {
+         margin-bottom: 60px;
+         padding: 15px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         margin-bottom: 40px;
+      }
+   }
+
+   &__form {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      @media (max-width: $laptopWidth) {
+         flex-wrap: wrap;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+}
+
+.form {
+   ._fake-date {
+      @media (max-width: $laptopWidth) {
+         display: none;
+      }
+
+      &::after {
+         content: "";
+         background: url('../img/Icons/calendar.svg') center/contain no-repeat;
+         width: 18px;
+         height: 18px;
+         position: absolute;
+         top: 17px;
+         right: 17px;
+         cursor: pointer;
+      }
+   }
+
+   &__group {
+      display: flex;
+      flex-direction: column;
+      width: 270px;
+      flex: 0 1 270px;
+      margin-right: 15px;
+      position: relative;
+
+      &._has-select {
+         &::after {
+            content: "";
+            width: 21px;
+            height: 21px;
+            background: url("../img/Icons/arrow.svg") center / contain no-repeat;
+            position: absolute;
+            right: 16px;
+            top: 16px;
+            transform: rotate(90deg);
+            transition: transform 0.4s ease;
+         }
+
+         &._is-open::after {
+            transform: rotate(-90deg);
+         }
+      }
+
+      @media (max-width: $laptopWidth) {
+         margin: 10px;
+         flex: 1 1 270px;
+      }
+
+      label {
+         margin-top: 8px;
+         font-size: 14px;
+         color: $white;
+
+         @media (max-width: $laptopWidth) {
+            margin-top: 3px;
+         }
+
+      }
+
+   }
+
+   &__input {
+      width: 100%;
+      padding: 0 3%;
+      height: 52px;
+      border-radius: 8px;
+      border: 1px solid $white;
+      background-color: #ffffff00;
+      font-weight: 700;
+      font-size: 16px;
+      color: $white;
+      appearance: none;
+
+      option {
+         background-color: $green;
+      }
+   }
+
+   &__btn {
+      flex: 0 1 213px;
+      height: 52px;
+      border-radius: 4px;
+      color: $green;
+      background-color: $white;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all ease 0.4s;
+
+      &:hover {
+         background-color: $green;
+         color: $white;
+         transform: scale(1.05);
+      }
+
+      &:active {
+         transform: scale(1);
+      }
+
+      @media (max-width: $laptopWidth) {
+         flex: 1 1 90%;
+      }
+   }
+}
+
+.double-date {
+   display: flex;
+   flex: 1 1 auto;
+   flex-wrap: wrap;
+
+
+   @media (min-width: $laptopWidth) {
+      position: absolute;
+      top: -78%;
+      left: 8%;
+      padding: 20px;
+      background-color: $green;
+      border-radius: 20px;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all ease 0.4s;
+
+      &.date-on {
+         opacity: 1;
+         visibility: visible;
+         top: -70%;
+         left: 10%;
+      }
+   }
+
+   &__input {
+      width: 100%;
+      padding: 0 3%;
+      height: 52px;
+      border-radius: 8px;
+      border: 1px solid $white;
+      background-color: #ffffff00;
+      font-weight: 700;
+      font-size: 16px;
+      color: $white;
+
+      &::-webkit-calendar-picker-indicator {
+         background: url('../img/Icons/calendar.svg') center/contain no-repeat;
+         color: transparent;
+         width: 18px;
+         height: 18px;
+         top: 17px;
+         right: 17px;
+      }
+   }
+
+   &__group {
+      display: flex;
+      flex-direction: column;
+      width: 270px;
+      flex: 0 1 270px;
+      margin-right: 15px;
+
+      @media (max-width: $laptopWidth) {
+         margin: 10px;
+         flex: 1 1 270px;
+      }
+
+      label {
+         margin-top: 8px;
+         font-size: 14px;
+         color: $white;
+
+         @media (max-width: $laptopWidth) {
+            margin-top: 3px;
+         }
+
+      }
+   }
+
+   &__input {}
+
+   button {
+      background-color: $white;
+      color: $green;
+      flex: 0 1 120px;
+      align-self: self-start;
+      height: 45px;
+
+      @media (max-width: $laptopWidth) {
+         display: none;
+      }
+   }
+}

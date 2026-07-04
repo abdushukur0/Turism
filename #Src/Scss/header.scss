@@ -1,0 +1,220 @@
+.header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   padding-top: 16px;
+   transition: all ease 0.3s;
+   z-index: 20;
+
+   background-color: rgba(26, 62, 62, 0);
+
+   &__logo {
+
+      img {
+         width: 137px;
+         transition: all ease 0.3s;
+
+         @media (max-width: $padWidth) {
+            width: 105px;
+         }
+
+         @media (max-width: $mobileWidth) {
+            width: 85px;
+         }
+      }
+
+      margin-right: 25px;
+   }
+
+   &._scroll {
+      position: fixed;
+      background-color: rgba(26, 62, 62, 0.7);
+      padding-top: 0;
+      padding: 5px;
+
+      .logo {
+
+
+         img {
+            width: 105px;
+         }
+      }
+
+   }
+
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+
+
+   &__menu {
+      flex: 0 1 831px;
+
+   }
+
+
+}
+
+
+.logo {
+   position: relative;
+   z-index: 22;
+}
+
+.menu {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: all ease 0.5s;
+
+   @media (max-width: $padWidth) {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: -100%;
+      left: 0;
+      background-color: $green;
+      z-index: 10;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 70px 10px;
+
+   }
+
+   &__btn {
+      padding: 12px 24px;
+
+      @media (max-width: $laptopWidth) {
+         display: none;
+      }
+
+      @media (max-width: $padWidth) {
+         display: block;
+         width: 60%;
+         color: $green;
+         background-color: $white;
+      }
+
+      @media (max-width: $mobileWidth) {
+         width: 70%;
+      }
+   }
+
+   &__item {
+      font-weight: 600;
+      font-size: 18px;
+      color: $white;
+      position: relative;
+
+      @media (max-width: $padWidth ) {
+         margin-bottom: 16px;
+
+      }
+
+      &::before {
+
+         content: "";
+         opacity: 0;
+         visibility: hidden;
+         top: 50%;
+         left: 0;
+         transition: all ease 0.4s;
+         width: 0px;
+         height: 0px;
+         position: absolute;
+         background: url("../img/Icons/arrowYellow.svg") top center / contain no-repeat;
+      }
+
+      &:hover {
+         color: #F2BE22;
+
+         &::before {
+            opacity: 1;
+            visibility: visible;
+            left: -16px;
+            top: 0px;
+            width: 14px;
+            height: 15px;
+         }
+      }
+   }
+}
+
+
+
+.burger-btn {
+   display: none;
+   position: relative;
+   z-index: 22;
+   transition: all ease 0.3s;
+   cursor: pointer;
+
+   @media (max-width: $padWidth) {
+      display: block;
+      width: 21px;
+      height: 3px;
+      border-radius: 5px;
+      background-color: $white;
+
+      &::before {
+         content: "";
+         display: block;
+         width: 21px;
+         height: 3px;
+         border-radius: 5px;
+         background-color: $white;
+         position: absolute;
+         top: -7px;
+         left: 0;
+         transition: all ease 0.3s;
+      }
+
+      &::after {
+         content: "";
+         display: block;
+         width: 13px;
+         height: 3px;
+         border-radius: 5px;
+         background-color: $white;
+         position: absolute;
+         top: 7px;
+         right: 0;
+         transition: all ease 0.3s;
+      }
+   }
+}
+
+.header._active-menu {
+   @media (max-width: $padWidth ) {
+      .menu {
+         top: 0;
+      }
+   }
+
+   .burger-btn {
+
+      @media (max-width: $padWidth) {
+
+         background-color: #ffffff00;
+
+         &::before {
+            transform: rotate(45deg);
+            top: 0;
+            left: 0;
+         }
+
+         &::after {
+            transform: rotate(-45deg);
+            width: 21px;
+            top: 0;
+            left: 0;
+         }
+
+      }
+   }
+
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>РУМТИБЕТ</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container _container">
+            <div class="header__logo logo">
+               <a href="#"><img src="img/Logo.svg" alt="logo"></a>
+            </div>
+            <nav class="header__menu menu">
+               <a class="menu__item" href="#">Главная</a>
+               <a class="menu__item" href="#">Про гида</a>
+               <a class="menu__item" href="#">Программа тура</a>
+               <a class="menu__item" href="#">Стоимость</a>
+               <a class="menu__item" href="#">Блог</a>
+               <a class="menu__item" href="#">Контакты</a>
+               <button onclick="window.location.href='#'" class="menu__btn _btn">Консультация</button>
+            </nav>
+
+            <div class="header__burger-btn burger-btn"></div>
+         </div>
+      </header>
+      <main class="main">
+         <div class="main__bunner bunner">
+            <div class="bunner__container _container">
+               <div class="bunner__img"></div>
+
+               <h1 class="bunner__title">
+                  Насладись прогулкой в горах <br>с командой единомышленников
+               </h1>
+               <div class="bunner__form-container">
+                  <form action="#" method="POST" class="bunner__form form">
+                     <div class="form__group _has-select">
+                        <select class="form__input" name="location" id="location">
+                           <option value="" selected disabled>Локация для тура</option>
+                           <option value="italy">Италия</option>
+                           <option value="france">Франция</option>
+                           <option value="dubai">Дубай</option>
+                           <option value="usa">США</option>
+                        </select>
+                        <label for="location">выберите из списка</label>
+                     </div>
+
+                     <div class="form__group _fake-date">
+                        <input class="form__input" type="text" value="Дата похода" name="fake-date" id="fake-date"
+                           readonly>
+                        <label for="fake-date">выберите диапазон</label>
+                     </div>
+
+                     <div class="form__group _has-select">
+                        <select class="form__input" name="participants" id="participants">
+                           <option value="" selected disabled>Участники</option>
+                           <option value="4">4</option>
+                           <option value="5">5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                        </select>
+                        <label for="participants">Минимум 4 человек</label>
+                     </div>
+
+                     <div class="form__double-date double-date">
+                        <div class="double-date__group">
+                           <input class="double-date__input" type="date" name="date-start" id="date-start">
+                           <label for="date-start">Дата начала</label>
+                        </div>
+                        <div class="double-date__group">
+                           <input class="double-date__input" type="date" name="date-end" id="date-end">
+                           <label for="date-end">Дата окончания</label>
+                        </div>
+                        <button type="button" class="_btn">Готово</button>
+                        <span class="_closer"></span>
+                     </div>
+                     <button type="submit" onclick="unSubmit(event)" class="form__btn">Найти программу</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="main__about-camp about-camp">
+            <div class="about-camp__container _container">
+               <div class="about-camp__img-block">
+                  <div class="about-camp__img">
+                     <img src="img/aboutCamp/After.png" alt="img">
+                     <div class="about-camp__front-img">
+                        <video src="img/aboutCamp/3.mp4" controls poster="img/aboutCamp/Before.jpg"
+                           preload="none"></video>
+                     </div>
+                  </div>
+               </div>
+               <div class="about-camp__text-block">
+                  <h3 class="about-camp__subtitle">о нашем походе</h3>
+                  <h2 class="about-camp__title">Исследуйте все горные массивы мира вместе с нами</h2>
+                  <div class="about-camp__text">
+                     Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий
+                     назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из
+                     самых странных слов в Lorem Ipsum, "consectetur"и занялся его поисками в классической латинской
+                     литературе.
+                  </div>
+                  <button onclick="window.location.href='#'" class="about-camp__btn _btn">Программа тура</button>
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
