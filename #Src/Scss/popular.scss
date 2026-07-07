@@ -1,0 +1,266 @@
+.main {
+
+   &__popular {
+      padding: 80px 0;
+   }
+}
+
+.popular {
+
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @media (max-width: $mobileWidth) {
+         display: block;
+      }
+   }
+
+   &__subtitle {
+      font-size: 24px;
+      color: #F2BE22;
+      margin-bottom: 8px;
+
+      @media (max-width: $padWidth) {
+         font-size: 20px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         font-size: 16px;
+      }
+   }
+
+   &__title {
+      font-weight: 800;
+      font-size: 32px;
+      margin-bottom: 50px;
+
+      @media (max-width: $padWidth) {
+         font-size: 28px;
+         margin-bottom: 40px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         font-size: 24px;
+         margin-bottom: 30px;
+      }
+
+   }
+
+   &__programs-block {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      margin-bottom: 50px;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+         height: 0;
+      }
+
+      @media (max-width: $padWidth) {
+         margin-bottom: 40px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         margin-bottom: 30px;
+      }
+   }
+
+   &__programs-card {
+      flex: 0 1 380px;
+      height: 500px;
+      margin-right: 12px;
+      background-color: #333;
+
+      &:last-child {
+         margin-right: 0;
+      }
+
+      @media (max-width: $laptopWidth) {
+         height: 450px;
+         flex: 0 0 350px;
+      }
+
+      @media (max-width: $padWidth) {
+         height: 450px;
+
+      }
+
+      @media (max-width: $mobileWidth) {
+         height: 400px;
+         flex: 0 0 280px;
+      }
+   }
+
+   &__btn {
+      padding: 16px 36px;
+
+      @media (max-width: $mobileWidth) {
+         padding: 12px 24px;
+      }
+   }
+
+}
+
+.card {
+   color: $white;
+   position: relative;
+   overflow: hidden;
+   border-radius: 32px;
+   background: url('../img/Popular/2.jpg') center / cover no-repeat;
+
+   &:first-child {
+      background: url('../img/Popular/1.jpg') center / cover no-repeat;
+   }
+
+   &:last-child {
+      background: url('../img/Popular/3.jpg') center / cover no-repeat;
+   }
+
+   &__star {
+      transition: all ease 0.3s;
+      font-size: 16px;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      opacity: 1;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      padding: 4px 8px;
+      color: $green;
+      font-weight: 700;
+      background-color: rgba(255, 255, 255, 0.4);
+
+      @media (max-width: $mobileWidth) {
+         top: 37px;
+      }
+   }
+
+   &__content {
+      position: absolute;
+      top: 83%;
+      left: 0;
+      padding: 20px 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: top ease 0.5s;
+      overflow: hidden;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+         height: 0;
+      }
+
+      @media (max-width: $padWidth) {
+         padding: 25px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         padding: 20px;
+      }
+   }
+
+   &__visible-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+   }
+
+   &__title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 120%;
+
+      @media (min-width: 993px) and (max-width:1024px) {
+         font-size: 20px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         font-size: 18px;
+      }
+   }
+
+   &__subtitle {
+      font-size: 14px;
+
+      @media (min-width: 993px) and (max-width:1024px) {
+         font-size: 12px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         font-size: 11px;
+      }
+   }
+
+   &__price {
+      font-weight: 700;
+      font-size: 20px;
+      padding: 8px 16px;
+      background-color: rgba(255, 255, 255, 0.3);
+
+      @media (min-width: 993px) and (max-width:1024px) {
+         font-size: 18px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         font-size: 16px;
+         padding: 6px 12px;
+      }
+   }
+
+   &__text {
+      font-size: 16px;
+      line-height: 150%;
+      margin-bottom: 10px;
+
+   }
+
+   &__btn {
+      margin-top: auto;
+      padding: 12px 24px;
+   }
+}
+
+
+
+.card:hover {
+   .card__star {
+      opacity: 0;
+      visibility: hidden;
+   }
+
+   .card__content {
+      padding: 30px;
+      top: 0;
+      overflow: auto;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+         height: 0;
+      }
+
+      @media (max-width: $padWidth) {
+         padding: 25px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         padding: 20px;
+      }
+   }
+
+}

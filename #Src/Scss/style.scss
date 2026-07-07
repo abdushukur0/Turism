@@ -53,29 +53,25 @@ body._lock {
 @import 'header';
 @import 'bunner';
 @import 'about-camp';
+@import 'best-programs';
+@import 'popular';
 
 .main {
 
-   &__best-programs {
-      padding: clamp(40px, 5vw + 20px, 80px) 0;
-
-   }
+   &__travel-blog {}
 }
 
-.best-programs {
+.travel-blog {
+   padding: 80px 0;
    background-color: #F3F5F4;
 
    &__container {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-   }
 
-   &__text-block {
-      flex: 0 1 580px;
-
-      @media (max-width: $laptopWidth) {
-         flex: 1 1 auto;
+      @media (max-width: $mobileWidth) {
+         display: block;
       }
    }
 
@@ -108,53 +104,15 @@ body._lock {
       }
    }
 
-   &__text {
-      font-size: 18px;
-      line-height: 150%;
-      margin-bottom: 40px;
-
-      @media (max-width: $padWidth) {
-         margin-bottom: 32px;
-      }
-
-      @media (max-width: $mobileWidth) {
-         font-size: 16px;
-      }
-   }
-
-   &__list {}
-
-   &__list-item {
+   &__block {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
-
-      @media (max-width: $padWidth) {
-         margin-bottom: 32px;
-      }
-
-      @media (max-width: $mobileWidth) {
-         align-items: flex-start;
-      }
    }
 
-   &__list-img {
-      margin-right: 16px;
-   }
-
-   &__list-text-block {}
-
-   &__list-title {
-      font-weight: 700;
-      font-size: 18px;
-      line-height: 20px;
-      letter-spacing: 1.2%;
-      margin-bottom: 4px;
-   }
-
-   &__list-text {
-      font-size: 14px;
-      line-height: 20px;
+   &__blog {
+      padding: 16px;
    }
 
    &__btn {
@@ -168,48 +126,46 @@ body._lock {
          margin: 0 auto;
       }
    }
+}
 
-   &__img-block {
-      flex: 0 0 510px;
-      min-height: 510px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-
-
-      @media (max-width: $laptopWidth) {
-         display: none;
-      }
-   }
+.blog-card {
+   display: flex;
+   justify-content: space-between;
+   flex: 0 1 580px;
+   min-height: 312px;
+   background-color: $white;
 
    &__img {
-      width: 250px;
-      height: 250px;
-      background-color: $green;
-      margin: 5px 0;
-
-      &:first-child {
-         background: url('../img/BestPrograms/LeftTop.jpg') center / cover no-repeat;
-         border-top-right-radius: 50px;
-         border-bottom-left-radius: 50px;
-      }
+      flex: 0 0 230px;
+      min-height: 100%;
+      border-radius: 6px;
+      background: url('../img/TravelBlog/1.jpg') center / cover no-repeat;
 
       &:nth-child(2) {
-         background: url('../img/BestPrograms/RightTop.jpg') center / cover no-repeat;
-         border-top-left-radius: 50px;
-         border-bottom-right-radius: 50px;
+         background: url('../img/TravelBlog/2.jpg') center / cover no-repeat;
       }
 
       &:nth-child(3) {
-         background: url('../img/BestPrograms/LeftBottom.jpg') center / cover no-repeat;
-         border-top-left-radius: 50px;
-         border-bottom-right-radius: 50px;
+         background: url('../img/TravelBlog/3.jpg') center / cover no-repeat;
       }
 
       &:nth-child(4) {
-         background: url('../img/BestPrograms/RightBottom.jpg') center / cover no-repeat;
-         border-top-right-radius: 50px;
-         border-bottom-left-radius: 50px;
+         background: url('../img/TravelBlog/4.jpg') center / cover no-repeat;
       }
    }
+
+   &__text-block {
+      width: 100%;
+      margin-left: 20px;
+   }
+
+   &__title {}
+
+   &__text {}
+
+   &__footer {}
+
+   &__date {}
+
+   &__link {}
 }
