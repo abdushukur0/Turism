@@ -55,22 +55,23 @@ body._lock {
 @import 'about-camp';
 @import 'best-programs';
 @import 'popular';
+@import 'travel-blog';
 
 .main {
 
-   &__travel-blog {}
+   &__gallary {
+      padding: 80px 0;
+   }
 }
 
-.travel-blog {
-   padding: 80px 0;
-   background-color: #F3F5F4;
+.gallary {
 
    &__container {
       display: flex;
       flex-direction: column;
       align-items: center;
 
-      @media (max-width: $mobileWidth) {
+      @media (max-width: $padWidth) {
          display: block;
       }
    }
@@ -105,15 +106,18 @@ body._lock {
    }
 
    &__block {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      margin-bottom: 50px;
+
+      @media (max-width: $padWidth) {
+         margin-bottom: 40px;
+      }
+
+      @media (max-width: $mobileWidth) {
+         margin-bottom: 30px;
+      }
    }
 
-   &__blog {
-      padding: 16px;
-   }
+   &__img {}
 
    &__btn {
       font-weight: 600;
@@ -128,44 +132,183 @@ body._lock {
    }
 }
 
-.blog-card {
+.gallary__block {
    display: flex;
+   flex-wrap: wrap;
    justify-content: space-between;
-   flex: 0 1 580px;
-   min-height: 312px;
-   background-color: $white;
+   gap: 20px;
 
-   &__img {
-      flex: 0 0 230px;
-      min-height: 100%;
-      border-radius: 6px;
-      background: url('../img/TravelBlog/1.jpg') center / cover no-repeat;
+   @media (max-width: $padWidth) {
+      gap: 15px;
+   }
 
-      &:nth-child(2) {
-         background: url('../img/TravelBlog/2.jpg') center / cover no-repeat;
+   @media (max-width: $mobileWidth) {
+      flex-wrap: nowrap;
+      gap: 20px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+         display: none;
+         height: 0;
       }
+   }
+}
 
-      &:nth-child(3) {
-         background: url('../img/TravelBlog/3.jpg') center / cover no-repeat;
-      }
+.gallary__img {
+   overflow: hidden;
+   position: relative;
+   height: 250px;
+   flex: 0 0 calc(25% - 10px);
+   border-radius: 6px;
 
-      &:nth-child(4) {
-         background: url('../img/TravelBlog/4.jpg') center / cover no-repeat;
+   @media (max-width: $padWidth) {
+      flex: 0 0 calc(50% - 10px);
+
+      &:nth-child(5) {
+         order: 2;
       }
    }
 
-   &__text-block {
+   img {
       width: 100%;
-      margin-left: 20px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
    }
 
-   &__title {}
+   &:before,
+   &:after {
+      content: "";
+      transition: background-color ease 0.4s;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+   }
 
-   &__text {}
+   &:hover {
+      @media (min-width: $mobileWidth) {
+         &:before {
+            background-color: rgba(26, 62, 62, 0.36);
+            z-index: 4;
+         }
 
-   &__footer {}
+         &::after {
+            background: url("../img/Icons/zoom.svg") center no-repeat;
+         }
+      }
+   }
 
-   &__date {}
+}
 
-   &__link {}
+.gallary__img--large {
+   flex: 0 0 calc(50% - 20px);
+
+   @media (max-width: $padWidth) {
+      flex: 0 0 calc(100% - 10px);
+   }
+}
+
+.gallary__img {
+   @media (max-width: $mobileWidth) {
+      flex: 0 0 280px;
+      height: 250px;
+   }
+}
+
+.gallary {
+
+   &__slider {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 800;
+      top: 0;
+      left: 0;
+      transition: all ease 0.8s;
+      opacity: 0;
+      visibility: hidden;
+
+      &._open {
+         @media (min-width: $mobileWidth) {
+            opacity: 1;
+            visibility: visible;
+         }
+
+      }
+   }
+
+   &__slider-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.499);
+   }
+
+   &__slider-closer {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 70px;
+      color: $white;
+      cursor: pointer;
+      z-index: 900;
+
+      @media (max-width: $padWidth) {
+         font-size: 50px;
+      }
+   }
+
+   &__swiper {}
+}
+
+.swiper {}
+
+.swiper-wrapper {}
+
+.swiper-slide {}
+
+.swiper-button-prev,
+.swiper-button-next {
+   color: $green;
+   font-weight: 800;
+   transition: transform ease 0.2s;
+
+   &:hover {
+      transform: scale(1.2);
+   }
+
+   &:active {
+      transform: scale(1.1);
+   }
+}
+
+.gallary__swiper {
+   width: 100%;
+   max-width: 80%;
+   height: 80%;
+   margin: 0 auto;
+   background-color: #f0f0f0;
+   position: absolute;
+   top: 10%;
+   left: 10%;
+}
+
+.swiper-slide {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}
+
+.swiper-slide img {
+   width: 100%;
+   height: 100%;
+   object-fit: contain;
 }
