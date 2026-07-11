@@ -71,6 +71,14 @@
    align-items: center;
    transition: all ease 0.5s;
 
+   .socials {
+      margin-top: 15px;
+
+      @media (min-width: $padWidth) {
+         display: none;
+      }
+   }
+
    @media (max-width: $padWidth) {
       position: fixed;
       width: 100vw;

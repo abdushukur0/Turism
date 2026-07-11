@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
    sliderClose.addEventListener('click', function () {
       galarySlider.classList.remove('_open');
+      document.querySelector('body').classList.remove('_locked');
    });
 
    const slideLinks = document.querySelectorAll('.gallary__img');
@@ -120,12 +121,18 @@ document.addEventListener('DOMContentLoaded', () => {
          const targetIndex = parseInt(link.getAttribute('data-slide-index'), 10);
          swiper.slideToLoop(targetIndex, 0);
          galarySlider.classList.add('_open');
+         document.querySelector('body').classList.add('_locked');
       });
    });
 
+   // footer ---------------------------------------------------------
 
-
-
+   const accordionBtn = document.querySelectorAll('.accordion__header');
+   accordionBtn.forEach(item => {
+      item.addEventListener('click', (event) => {
+         event.currentTarget.closest('.accordion').classList.toggle('_open');
+      });
+   });
 
 
 
