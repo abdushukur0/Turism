@@ -150,12 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
    // modalWindow ------------------------------------------------------------
 
    const consultingBtns = document.querySelectorAll('._consulting');
+   const modalWindow = document.querySelector('.main__modal');
+   const modalWindowCloser = document.querySelectorAll('._modal-closer');
    consultingBtns.forEach(item => {
       item.addEventListener('click', () => {
-         console.log(item);
+         modalWindow.classList.add('_open');
+         document.querySelector('body').classList.add('_modal-lock');
       })
-   })
+   });
 
+   modalWindowCloser.forEach(item => {
+      item.addEventListener('click', () => {
+         modalWindow.classList.remove('_open');
+         document.querySelector('body').classList.remove('_modal-lock');
+      })
+   });
 
 
 
