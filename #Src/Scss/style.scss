@@ -178,11 +178,11 @@ body._locked {
             content: "";
             opacity: 0;
             visibility: hidden;
-            top: 50%;
+            top: 30%;
             left: 0;
             transition: all ease 0.3s;
-            width: 10px;
-            height: 10px;
+            width: 0px;
+            height: 0px;
             position: absolute;
             background: url("../img/Icons/arrowYellow.svg") top center / contain no-repeat;
          }
@@ -191,7 +191,7 @@ body._locked {
             opacity: 1;
             visibility: visible;
             left: -16px;
-            top: 0px;
+            top: -2px;
             width: 14px;
             height: 15px;
          }

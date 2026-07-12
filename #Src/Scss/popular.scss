@@ -248,6 +248,7 @@
       top: 0;
       overflow: auto;
       scrollbar-width: none;
+      backdrop-filter: blur(6px);
 
       &::-webkit-scrollbar {
          display: none;

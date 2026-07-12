@@ -84,6 +84,16 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    });
 
+
+   // popular ----------------------------------------------------------
+
+   document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mouseleave', () => {
+         card.querySelector('.card__content').scrollTop = 0;
+      });
+   });
+
+
    // Gallary ----------------------------------------------
 
 
@@ -135,7 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
    });
 
-   // window ------------------------------------------------------------
+   document.querySelector('.currentYear').innerHTML = today.getFullYear();
+
+   // modalWindow ------------------------------------------------------------
 
    const consultingBtns = document.querySelectorAll('._consulting');
    consultingBtns.forEach(item => {
