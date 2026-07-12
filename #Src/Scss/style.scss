@@ -251,3 +251,45 @@ body._locked {
       }
    }
 }
+
+.footer {
+
+   &__bottom {
+      padding: 24px 0;
+      background-color: #18121E;
+
+      @media (max-width: $padWidth) {
+         padding: 20px 0;
+      }
+
+      ._container {
+         display: flex;
+         justify-content: space-between;
+         gap: 15px;
+         flex-wrap: wrap;
+
+         @media (max-width: $mobileWidth) {
+            flex-direction: column;
+            align-items: center;
+         }
+
+         p,
+         a {
+            font-weight: 600;
+            font-size: 14px;
+            color: #fff;
+         }
+
+         a {
+            text-decoration: underline solid 1px;
+
+            &:hover {
+               text-decoration-thickness: 2px;
+            }
+         }
+      }
+
+      .currentYear {}
+
+   }
+}

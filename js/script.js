@@ -128,12 +128,21 @@ document.addEventListener('DOMContentLoaded', () => {
    // footer ---------------------------------------------------------
 
    const accordionBtn = document.querySelectorAll('.accordion__header');
+
    accordionBtn.forEach(item => {
       item.addEventListener('click', (event) => {
-         event.currentTarget.closest('.accordion').classList.toggle('_open');
+         item.closest('.accordion').classList.toggle('_open');
       });
    });
 
+   // window ------------------------------------------------------------
+
+   const consultingBtns = document.querySelectorAll('._consulting');
+   consultingBtns.forEach(item => {
+      item.addEventListener('click', () => {
+         console.log(item);
+      })
+   })
 
 
 
